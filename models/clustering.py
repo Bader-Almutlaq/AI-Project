@@ -1,7 +1,18 @@
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
-from sklearn.cluster import KMeans, AgglomerativeClustering, DBSCAN, SpectralClustering, AffinityPropagation
-from sklearn.metrics import silhouette_score, davies_bouldin_score, adjusted_rand_score, calinski_harabasz_score
+from sklearn.cluster import (
+    KMeans,
+    AgglomerativeClustering,
+    DBSCAN,
+    SpectralClustering,
+    AffinityPropagation,
+)
+from sklearn.metrics import (
+    silhouette_score,
+    davies_bouldin_score,
+    adjusted_rand_score,
+    calinski_harabasz_score,
+)
 
 
 def run_clustering(data):
@@ -13,12 +24,14 @@ def run_clustering(data):
     clustering_algorithms = {
         "K-Means": KMeans(n_clusters=2),
         "Agglomerative Clustering": AgglomerativeClustering(n_clusters=2),
-        "DBSCAN": DBSCAN(eps=0.5, min_samples = 5),
+        "DBSCAN": DBSCAN(eps=0.5, min_samples=5),
         "Spectral": SpectralClustering(n_clusters=4),
-        "affinity": AffinityPropagation() ,
+        "affinity": AffinityPropagation(),
     }
 
     results = []
+    unique_metrics = []
+
     for name, algorithm in clustering_algorithms.items():
         labels = algorithm.fit_predict(X_scaled)
 
@@ -30,15 +43,18 @@ def run_clustering(data):
         else:
             silhouette = -1  # Indicating poor clustering
             davies_bouldin = float("inf")
-            
 
-        results.append(
-            {
-                "Algorithm": name,
-                "Silhouette Score": silhouette,
-                "Davies-Bouldin Index": davies_bouldin,
-                "Calinski Harabasz Index": calinski_harabasz_index,
-            }
-        )
+        result = {
+            "Algorithm": name,
+            "Silhouette Score": silhouette,
+            "Davies-Bouldin Index": davies_bouldin,
+            "Calinski Harabasz Index": calinski_harabasz_index,
+        }
+        results.append(result)
 
-    return results
+    unique_metrics = list(result.keys())
+    unique_metrics.remove("Algorithm")  # Remove "Algorithm" key
+    print(unique_metrics)
+    unique_metrics = sorted(unique_metrics)
+
+    return results, unique_metrics

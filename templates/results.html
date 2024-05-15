@@ -13,22 +13,18 @@
         <thead>
             <tr>
                 <th>Algorithm</th>
-                <th>Metric 1</th>
-                <th>Metric 2</th>
-                <th>Metric 3</th>
-                <th>Metric 4</th>
-                <th>Metric 5</th>
+                {% for metric in metrics %}
+                    <th>{{ metric }}</th>
+                {% endfor %}
             </tr>
         </thead>
         <tbody>
             {% for result in results %}
             <tr>
                 <td>{{ result["Algorithm"] }}</td>
-                <td>{{ result.get("Accuracy", result.get("MAE", result.get("Silhouette Score", "N/A"))) }}</td>
-                <td>{{ result.get("Precision", result.get("MSE", result.get("Davies-Bouldin Index", "N/A"))) }}</td>
-                <td>{{ result.get("Recall", result.get("R-Squared", result.get("Calinski Harabasz Index", "N/A"))) }}</td>
-                <td>{{ result.get("F1-Score", result.get("MedAE", "N/A")) }}</td>
-                <td>{{ result.get("ROC-AUC", "N/A") }}</td>
+                {% for metric in metrics %}
+                    <td>{{ result.get(metric, "N/A") }}</td>
+                {% endfor %}
             </tr>
             {% endfor %}
         </tbody>

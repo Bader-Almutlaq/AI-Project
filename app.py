@@ -15,23 +15,20 @@ def index():
 @app.route("/results", methods=["POST"])
 def results():
     task = request.form["task"]
-    dataset_name = request.form["dataset"]
-
-    if dataset_name == "heart":
-        data = pd.read_csv("data/heart.csv")
-    elif dataset_name == "diabetes":
-        data = pd.read_csv("data/diabetes.csv")
-    elif dataset_name == "breast_cancer":
-        data = pd.read_csv("data/breast_cancer.csv")
 
     if task == "classification":
-        results = run_classification(data)
+        data = pd.read_csv("data/heart.csv")
+        results, metrics = run_classification(data)
     elif task == "regression":
-        results = run_regression(data)
+        data = pd.read_csv("data/diabetes.csv")
+        results, metrics = run_regression(data)
     elif task == "clustering":
-        results = run_clustering(data)
+        data = pd.read_csv("data/breast_cancer.csv")
+        results, metrics = run_clustering(data)
 
-    return render_template("results.html", results=results)
+    #print(results)
+    #print(metrics)
+    return render_template("results.html", results=results, metrics=metrics)
 
 
 if __name__ == "__main__":

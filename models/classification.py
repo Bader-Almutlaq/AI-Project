@@ -48,6 +48,8 @@ def run_classification(data):
     }
 
     results = []
+    unique_metrics = []
+
     for name, clf in classifiers.items():
         clf.fit(X_train, y_train)
         y_pred = clf.predict(X_test)
@@ -59,15 +61,19 @@ def run_classification(data):
         f1 = f1_score(y_test, y_pred)
         roc_auc = roc_auc_score(y_test, y_prob)
 
-        results.append(
-            {
-                "Algorithm": name,
-                "Accuracy": accuracy,
-                "Precision": precision,
-                "Recall": recall,
-                "F1-Score": f1,
-                "ROC-AUC": roc_auc,
-            }
-        )
+        result = {
+            "Algorithm": name,
+            "Accuracy": accuracy,
+            "Precision": precision,
+            "Recall": recall,
+            "F1-Score": f1,
+            "ROC-AUC": roc_auc,
+        }
+        results.append(result)
 
-    return results
+    unique_metrics = list(result.keys())
+    unique_metrics.remove("Algorithm")  # Remove "Algorithm" key
+    print(unique_metrics)
+    unique_metrics = sorted(unique_metrics)
+    
+    return results, unique_metrics
