@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <h1>Experiment Results</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Algorithm</th>
+                <th>Metric 1</th>
+                <th>Metric 2</th>
+                <th>Metric 3</th>
+                <th>Metric 4</th>
+                <th>Metric 5</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in results %}
+            <tr>
+                <td>{{ result["Algorithm"] }}</td>
+                <td>{{ result.get("Accuracy", result.get("MAE", result.get("Silhouette Score", "N/A"))) }}</td>
+                <td>{{ result.get("Precision", result.get("MSE", result.get("Davies-Bouldin Index", "N/A"))) }}</td>
+                <td>{{ result.get("Recall", result.get("R-Squared", "N/A")) }}</td>
+                <td>{{ result.get("F1-Score", "N/A") }}</td>
+                <td>{{ result.get("ROC-AUC", "N/A") }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/">Run Another Experiment</a>
+</body>
+
+</html>

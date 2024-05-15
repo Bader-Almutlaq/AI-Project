@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ML Experiments</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <h1>Machine Learning Experiments</h1>
+    <form action="/results" method="POST">
+        <label for="task">Select Task:</label>
+        <select name="task" id="task">
+            <option value="classification">Classification</option>
+            <option value="regression">Regression</option>
+            <option value="clustering">Clustering</option>
+        </select>
+        <br><br>
+        <label for="dataset">Select Dataset:</label>
+        <select name="dataset" id="dataset">
+            <option value="heart">Heart Disease</option>
+            <option value="diabetes">Diabetes</option>
+            <option value="breast_cancer">Breast Cancer</option>
+        </select>
+        <br><br>
+        <button type="submit">Run Experiment</button>
+    </form>
+</body>
+
+</html>
