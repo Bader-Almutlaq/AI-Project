@@ -52,11 +52,15 @@ This project involves experimenting with three publicly available medical datase
 1. Linear Regression
 2. Decision Tree Regressor
 3. Random Forest Regressor
+4. Support Vector Regression
+5. Ridge Regression
 
 ### Clustering Algorithms
 1. K-Means
 2. Agglomerative Clustering
 3. DBSCAN
+4. SpectralClustering
+5. AffinityPropagation
 
 ## Results
 

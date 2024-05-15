@@ -1,4 +1,3 @@
-import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from sklearn.cluster import (
     KMeans,
@@ -10,7 +9,6 @@ from sklearn.cluster import (
 from sklearn.metrics import (
     silhouette_score,
     davies_bouldin_score,
-    adjusted_rand_score,
     calinski_harabasz_score,
 )
 
