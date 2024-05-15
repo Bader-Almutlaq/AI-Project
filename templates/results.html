@@ -26,8 +26,8 @@
                 <td>{{ result["Algorithm"] }}</td>
                 <td>{{ result.get("Accuracy", result.get("MAE", result.get("Silhouette Score", "N/A"))) }}</td>
                 <td>{{ result.get("Precision", result.get("MSE", result.get("Davies-Bouldin Index", "N/A"))) }}</td>
-                <td>{{ result.get("Recall", result.get("R-Squared", "N/A")) }}</td>
-                <td>{{ result.get("F1-Score", "N/A") }}</td>
+                <td>{{ result.get("Recall", result.get("R-Squared", result.get("Calinski Harabasz Index", "N/A"))) }}</td>
+                <td>{{ result.get("F1-Score", result.get("MedAE", "N/A")) }}</td>
                 <td>{{ result.get("ROC-AUC", "N/A") }}</td>
             </tr>
             {% endfor %}
