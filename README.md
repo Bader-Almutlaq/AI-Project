@@ -25,8 +25,17 @@ This project involves experimenting with three publicly available medical datase
 ## Datasets
 
 - **Heart Disease Dataset**: Contains 14 attributes related to heart disease.
-- **Diabetes Dataset**: Contains 10 attributes related to diabetes progression.
-- **Breast Cancer Wisconsin Dataset**: Contains 30 attributes computed from a digitized image of a fine needle aspirate of a breast mass.
+  - Source: UCI Machine Learning Repository
+  - Citation: Dua, D. and Graff, C. (2019). Heart Disease Dataset. UCI Machine Learning Repository. 
+  - `https://archive.ics.uci.edu/ml/datasets/Heart+Disease`
+  
+- **Diabetes Dataset**: Contains 11 attributes related to diabetes progression.
+- Access: [scikit-learn documentation]`https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_diabetes.html`
+
+- **Breast Cancer Wisconsin Dataset**: Contains 31 attributes computed from a digitized image of a fine needle aspirate of a breast mass.
+  -Source: UCI Machine Learning Repository
+  - Citation: Street, W.N. et al. (1993). Breast Cancer Wisconsin Dataset. UCI Machine Learning Repository. 
+  - `https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+(Diagnostic)`
 
 ## Tasks
 
@@ -67,5 +76,5 @@ This project involves experimenting with three publicly available medical datase
 The results are displayed on the web interface after running the experiments. The performance metrics used are:
 
 - **Classification**: Accuracy, Precision, Recall, F1-score, ROC-AUC.
-- **Regression**: Mean Absolute Error (MAE), Mean Squared Error (MSE), R-squared score.
-- **Clustering**: Silhouette score, Davies-Bouldin index.
+- **Regression**: Mean Absolute Error (MAE), Mean Squared Error (MSE), R-squared score, Median Absolute Error (MedAE).
+- **Clustering**: Silhouette score, Davies-Bouldin index, Calinski Harabasz Index.
