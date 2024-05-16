@@ -30,7 +30,8 @@ This project involves experimenting with three publicly available medical datase
   - `https://archive.ics.uci.edu/ml/datasets/Heart+Disease`
   
 - **Diabetes Dataset**: Contains 11 attributes related to diabetes progression.
-- Access: [scikit-learn documentation]`https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_diabetes.html`
+- Access: [scikit-learn documentation]
+  `https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_diabetes.html`
 
 - **Breast Cancer Wisconsin Dataset**: Contains 31 attributes computed from a digitized image of a fine needle aspirate of a breast mass.
   -Source: UCI Machine Learning Repository
