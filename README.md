@@ -41,7 +41,7 @@ This project involves experimenting with three publicly available medical datase
 ## Tasks
 
 - **Classification**: Predict the presence or absence of heart disease.
-- **Regression**: Predict diabetes progression.
+- **Regression**: Predict glucose level progression.
 - **Clustering**: Cluster breast cancer data to find natural groupings.
 
 ## Models
@@ -54,7 +54,7 @@ This project involves experimenting with three publicly available medical datase
 5. Random Forest (Ensemble)
 6. Gradient Boosting (Ensemble)
 7. Naive Bayes
-8. Extra Trees Classifier (Ensemble)
+8. Extra Trees Classifier (Ensemble)glucose level
 9. AdaBoost (Ensemble)
 10. XGBoost (Ensemble)
 
