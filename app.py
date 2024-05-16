@@ -20,7 +20,7 @@ def results():
         data = pd.read_csv("data/heart.csv")
         results, metrics = run_classification(data)
     elif task == "regression":
-        data = pd.read_csv("data/diabetes.csv")
+        data = pd.read_csv("data/diabetes2.csv")
         results, metrics = run_regression(data)
     elif task == "clustering":
         data = pd.read_csv("data/breast_cancer.csv")
