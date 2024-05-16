@@ -40,7 +40,7 @@ This project involves experimenting with three publicly available medical datase
 
 ## Tasks
 
-- **Classification**: Predict the presence or absence of heart disease and diagnose breast cancer.
+- **Classification**: Predict the presence or absence of heart disease.
 - **Regression**: Predict diabetes progression.
 - **Clustering**: Cluster breast cancer data to find natural groupings.
 
